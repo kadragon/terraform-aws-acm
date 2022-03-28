@@ -20,7 +20,7 @@ module "acm_request_certificate" {
   # Cloud Posse recommends pinning every module to a specific version
   version     = "0.16.0"
   domain_name = var.domain
-  # subject_alternative_names         = var.sub_domains
+  subject_alternative_names         = var.san
   process_domain_validation_options = true
   ttl                               = "300"
 }
