@@ -1,6 +1,6 @@
 provider "aws" {
-  region = "us-east-1"
-  alias  = "us"
+  region = var.region
+  alias  = "provider"
 }
 
 data "aws_route53_zone" "front" {
@@ -12,7 +12,7 @@ data "aws_route53_zone" "front" {
 module "acm_request_certificate" {
   source = "cloudposse/acm-request-certificate/aws"
   providers = {
-    aws = aws.us
+    aws = aws.provider
   }
 
   zone_id = data.aws_route53_zone.front.zone_id
