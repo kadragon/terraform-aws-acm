@@ -1,11 +1,11 @@
-variable "domain" {
-  description = "root domain name"
+variable "sld" {
+  description = "Second-Level Domain"
   type        = string
 }
 
-variable "sub_domains" {
-  description = "sub domain list"
-  type        = list(string)
+variable "domain" {
+  description = "Service Providing Domain"
+  type        = string
 }
 
 variable "region" {
